@@ -15,14 +15,16 @@ export const cartSlice = createSlice({
             }
         },
         decrement: (state, payload) => {
-            const item = state.value.find((item) => item.id === payload);
-            item.count++;
+            const item = state.value.find((item) => item.id === payload.payload);
+            if(item.count > 0) {
+                item.count--;
+            }
         },
         increment: (state, payload) => {
-            const item = state.value.find((item) => item.id === payload);
-            item.count--;
+            const item = state.value.find((item) => item.id === payload.payload);
+            item.count++;
         },
-        removeItem: (state, payload) => state.value.filter((item) => item.id !== payload)          
+        removeItem: (state, payload) => state.value.filter((item) => item.id !== payload.payload)          
     }
 })
 

@@ -8,6 +8,7 @@ const Cart = () => {
       {
         cart.map((item) => <CartItem item={item} />)
       }
+      <h2>Total price ${cart.reduce((acc, iter) => acc+= (iter.count* iter.price ), 0)}</h2>
   </section>;
 };
 
