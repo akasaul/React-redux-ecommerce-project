@@ -3,11 +3,13 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import NavLogo from "./NavLogo";
 import { Badge } from "@mui/material";
 const Navbar = () => {
-  
+  const cart = useSelector((state) => state.cart.value);
+  const cartSize = cart.length;
   const [navbarOpen, setNavbarOpen] = useState(false);
   return (
     <nav className="p-2 border shadow bg-white">
@@ -38,7 +40,7 @@ const Navbar = () => {
           </Link>
           <Link to="/cart" onClick={() => setNavbarOpen(false)}>
             <li className="p-4 hover:bg-red-100">
-              <Badge badgeContent={2} color="primary">
+              <Badge badgeContent={cartSize} color="primary">
                 <ShoppingCartOutlinedIcon color="action" />
               </Badge>
             </li>
@@ -71,7 +73,7 @@ const Navbar = () => {
           </Link>
           <Link to="/cart">
             <li className="p-4">
-              <Badge badgeContent={2} color="primary">
+              <Badge badgeContent={cartSize} color="primary">
                 <ShoppingCartOutlinedIcon color="action" />
               </Badge>
             </li>
