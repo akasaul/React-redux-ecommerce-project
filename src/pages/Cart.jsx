@@ -5,7 +5,9 @@ const Cart = () => {
   const cart = useSelector((state) => state.cart.value);
   console.log(cart);
   return <section>
-      <CardList list={cart} />
+      {
+        cart.map((item) => <CartItem item={item} />)
+      }
   </section>;
 };
 
