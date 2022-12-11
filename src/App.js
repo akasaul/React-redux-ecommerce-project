@@ -1,20 +1,8 @@
 import './assets/css/App.css';
-import {
-    BrowserRouter as Router,
-    Routes,
-    Route
-} from "react-router-dom";
-
-import {routes} from "./routes";
-
 
 function App() {
     return (
-        <Router>
-            <Routes>
-                {routes.map(route => <Route {...route} />)}
-            </Routes>
-        </Router>
+        <p className='p-2 bg-purple-400'>Hi</p>
     );
 }
 
