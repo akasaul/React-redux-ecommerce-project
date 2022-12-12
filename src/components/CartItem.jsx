@@ -4,7 +4,7 @@ import { increment, decrement, removeItem } from "../features/Cart/CartSlice";
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();
   return (
-    <section className="p-2 flex  sm:flex-row bg-white items-center sm:items-stretch justify-evenly space-x-6">
+    <section className="p-2 flex border-b-2  sm:flex-row bg-white items-center sm:items-stretch justify-evenly space-x-6">
       <div className="w-32">
         <img
           className="rounded-xl"

@@ -1,3 +1,4 @@
+import { PlaylistAddOutlined } from "@mui/icons-material";
 import {createSlice} from "@reduxjs/toolkit";
 
 export const cartSlice = createSlice({
@@ -24,7 +25,9 @@ export const cartSlice = createSlice({
             const item = state.value.find((item) => item.id === payload.payload);
             item.count++;
         },
-        removeItem: (state, payload) => state.value.filter((item) => item.id !== payload.payload)          
+        removeItem: (state, payload) => {
+            state.value = state.value.filter((item) => item.id !== payload.payload);
+        }        
     }
 })
 
