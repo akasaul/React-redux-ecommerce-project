@@ -8,10 +8,10 @@ const Pagination = ({itemsPerPage, totalItems, currentPage, paginate}) => {
         <ul className="flex bg-gray-800 rounded-xl my-5 justify-center text-white">
             {
                 pageNumbers.map((number) => (
-                    <li key={number} className="p-2" styles={{
-                        background: number === currentPage? "pink" : ""
+                    <li key={number} className="p-2" style={{
+                        background: number === currentPage? "rgb(255, 0, 0, 0.3)" : ""
                     }}>
-                        <a onClick={() => paginate(number)} href="!#">
+                        <a onClick={() => paginate(number)} href="#">
                             {number}
                         </a>
                     </li>
